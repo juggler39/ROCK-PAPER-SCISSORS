@@ -1,0 +1,53 @@
+body {
+    background-color: #E5E5E5;
+    font-family: Roboto, serif;
+    color: #000000;
+}
+
+
+.item1 {
+    grid-area: header;
+    height: 100px;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 50px;
+}
+.item2 { grid-area: header2; }
+.item3 { grid-area: rock; }
+.item4 { grid-area: paper; }
+.item5 { grid-area: scissors; }
+.item6 { grid-area: header3; }
+.item7 { grid-area: cpu; }
+.item8 { grid-area: you; }
+.item9 { grid-area: round; }
+.item10 { grid-area: cpu_choice; }
+.item11 { grid-area: your_choice; }
+
+.grid-container {
+    height: 820px;
+    width: 1000px;
+    margin: 20px auto;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    display: grid;
+    grid-template-areas:
+            'header header header'
+            'header2 header2 header2'
+            'rock paper scissors'
+            'header3 header3 header3'
+            'cpu round you'
+            'cpu_choice round your_choice';
+    grid-gap: 20px;
+    background-color: #C4C4C4;
+    box-sizing: border-box;
+    padding: 38px 100px;
+
+}
+
+.grid-container > div {
+    background-color: #DEDEDE;
+    border: 2px solid #4F4F4F;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    text-align: center;
+}
