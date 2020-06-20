@@ -10,16 +10,23 @@
 <body>
 <div class="grid-container">
   <div class="item1">Rock, Paper, Scissors game</div>
-  <div class="item2">Header 2</div>
-  <div class="item3">Rock</div>
-  <div class="item4">Paper</div>
-  <div class="item5">Scissors</div>
-  <div class="item6">Rock, Paper, Scissors, 1, 2, 3</div>
-  <div class="item7">CPU</div>
-  <div class="item8">YOU</div>
-  <div class="item9">ROUND</div>
-  <div class="item10">CPU choice</div>
-  <div class="item11">Your choice</div>
+  <div class="item2">Choose a figure please:</div>
+  <button class="item3 hand" onclick="startRound(0)"><span>✊</span></button>
+  <button class="item4 hand" onclick="startRound(1)"><span>✋</span></button>
+  <button class="item5 hand" onclick="startRound(2)"><span>✌</span></button>
+  <div class="item6" id="message">Rock, Paper, Scissors, 1, 2, 3</div>
+  <div class="item7 score" id="cpu_score">CPU: 0</div>
+  <div class="item8 score" id="your_score">YOU: 0</div>
+  <div class="item9">
+    <span id ='round'> ROUND 1 </span>
+    <div class="gametext" id="gametext">
+      <p>Computer plays Paper.</p>
+      <p>You play Paper.</p>
+      <p>It is a draw!</p>
+    </div>
+  </div>
+  <div class="item10 hand computer" id="cpu_choice"><span>✋</span></div>
+  <div class="item11 hand" id="your_choice"><span>✋</span></div>
 </div>
 </body>
 </html>

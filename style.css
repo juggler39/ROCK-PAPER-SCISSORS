@@ -1,9 +1,12 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #E5E5E5;
     font-family: Roboto, serif;
     color: #000000;
 }
-
 
 .item1 {
     grid-area: header;
@@ -12,16 +15,122 @@ body {
     font-weight: bold;
     font-size: 50px;
 }
-.item2 { grid-area: header2; }
-.item3 { grid-area: rock; }
-.item4 { grid-area: paper; }
-.item5 { grid-area: scissors; }
-.item6 { grid-area: header3; }
-.item7 { grid-area: cpu; }
-.item8 { grid-area: you; }
-.item9 { grid-area: round; }
-.item10 { grid-area: cpu_choice; }
-.item11 { grid-area: your_choice; }
+
+.item2 {
+    grid-area: header2;
+}
+
+.item2, .item6 {
+    height: 76px;
+    font-size: 40px;
+    font-weight: normal;
+    padding: 15px
+}
+
+.item7, .item8 {
+    height: 76px;
+    font-size: 50px;
+    font-weight: normal;
+    padding: 5px
+}
+
+.item3 {
+    grid-area: rock;
+}
+
+.item4 {
+    grid-area: paper;
+    margin: auto;
+}
+
+.item5 {
+    grid-area: scissors;
+}
+
+.item6 {
+    grid-area: header3;
+}
+
+.item7 {
+    grid-area: cpu;
+}
+
+.item8 {
+    grid-area: you;
+}
+
+.item9 {
+    grid-area: round;
+    height: 256px;
+    width: 340px;
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.item10 {
+    grid-area: cpu_choice;
+
+}
+
+.item11 {
+    grid-area: your_choice;
+}
+
+.hand {
+    height: 160px;
+    width: 212px;
+    font-size: 150px;
+}
+
+button {
+    background-color: #DEDEDE;
+    border: 2px solid #4F4F4F;
+    cursor: pointer;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    text-align: center;
+    outline: none;
+}
+
+button:hover {
+    background-color: #FFD458
+}
+
+button:active {
+
+    background-color: #FFD458;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+    transform: translateY(4px);
+
+}
+
+.hand span {
+    display: inline-block;
+    position: relative;
+    right: 15px;
+    bottom: 25px;
+    transform: rotate(-90deg);
+}
+
+.computer {
+    transform: scaleX(-1);
+}
+
+.score {
+    height: 76px;
+    width: 212px;
+}
+
+.gametext {
+    height: 156px;
+    width: 280px;
+    background-color: white;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 20px auto 5px;
+    padding-top: 5px;
+}
 
 .grid-container {
     height: 820px;
@@ -30,18 +139,11 @@ body {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
     border-radius: 40px;
     display: grid;
-    grid-template-areas:
-            'header header header'
-            'header2 header2 header2'
-            'rock paper scissors'
-            'header3 header3 header3'
-            'cpu round you'
-            'cpu_choice round your_choice';
-    grid-gap: 20px;
+    justify-content: space-between;
+    grid-template-areas: 'header header header' 'header2 header2 header2' 'rock paper scissors' 'header3 header3 header3' 'cpu round you' 'cpu_choice round your_choice';
+    grid-row-gap: 20px;
     background-color: #C4C4C4;
-    box-sizing: border-box;
     padding: 38px 100px;
-
 }
 
 .grid-container > div {
