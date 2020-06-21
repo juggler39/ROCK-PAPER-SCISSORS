@@ -1,4 +1,4 @@
-let round;
+let round=1;
 let cpuScore=0;
 let yourScore=0;
 
@@ -7,7 +7,8 @@ window.onload = function() {
 };
 
 function init () {
-    round=1;
+    cpuScore=0;
+    yourScore=0;
     document.getElementById('message').innerText = '';
     document.getElementById('cpu_score').innerText = 'CPU: 0';
     document.getElementById('your_score').innerText = 'YOU: 0';
@@ -15,9 +16,14 @@ function init () {
     document.getElementById('round').innerText = 'ROUND 1';
     document.getElementById('cpu_choice').firstElementChild.innerHTML = '';
     document.getElementById('your_choice').firstElementChild.innerHTML = '';
+
 }
 
 function startRound (playerSelection) {
+    if (round===1) init();
+    document.getElementById("button_rock").disabled = true;
+    document.getElementById("button_paper").disabled = true;
+    document.getElementById("button_scissors").disabled = true;
     let timeout=300;
     let hands=['✊', '✋', '✌'];
     let rpc=['Rock', 'Paper', 'Scissors'];
@@ -38,21 +44,28 @@ function startRound (playerSelection) {
         document.getElementById('your_choice').firstElementChild.innerHTML = hands[playerSelection];
         let node=document.createElement('p');
         let text=document.getElementById('gametext').appendChild(node);
-        text.innerHTML=`Computer plays ${rpc[computerSelection]}`;
+        text.innerHTML=`Computer plays <strong>${rpc[computerSelection]}</strong>`;
         node=document.createElement('p');
         text=document.getElementById('gametext').appendChild(node);
-        text.innerHTML=`You play ${rpc[playerSelection]}`;
+        text.innerHTML=`You play <strong>${rpc[playerSelection]}</strong>`;
         node=document.createElement('p');
         text=document.getElementById('gametext').appendChild(node);
         text.innerHTML=playRound(rpc[playerSelection], rpc[computerSelection]);
         document.getElementById('cpu_score').innerText = `CPU: ${cpuScore}`;
         document.getElementById('your_score').innerText = `YOU: ${yourScore}`;
+        document.getElementById("button_rock").disabled = false;
+        document.getElementById("button_paper").disabled = false;
+        document.getElementById("button_scissors").disabled = false;
     }, timeout*7);
     round++;
     if (round===6) {
-        round=1;
-        node=document.createElement('p');
-        text=document.getElementById('gametext').appendChild(node);
+        setTimeout(()=> {
+            round = 1;
+            let text=document.getElementById('gametext');
+            if (cpuScore===yourScore) text.innerHTML = '<p class = "game_over">Draw!</p>';
+            if (cpuScore>yourScore) text.innerHTML = '<p class = "game_over">You lose!</p>';
+            if (cpuScore<yourScore) text.innerHTML = '<p class = "game_over">You win!</p>';
+        }, timeout*9);
     }
 
 }

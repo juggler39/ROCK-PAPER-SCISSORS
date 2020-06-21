@@ -4,16 +4,16 @@
 
 body {
     background-color: #E5E5E5;
-    font-family: Roboto, serif;
+    font-family: Roboto, Arial, serif;
     color: #000000;
 }
 
 .item1 {
     grid-area: header;
-    height: 100px;
-    padding: 20px;
+    height: 10vmin;
+    padding: 2vmin;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 5vmin;
 }
 
 .item2 {
@@ -21,17 +21,17 @@ body {
 }
 
 .item2, .item6 {
-    height: 76px;
-    font-size: 40px;
+    height: 7.6vmin;
+    font-size: 4vmin;
     font-weight: normal;
-    padding: 15px
+    padding: 1.5vmin
 }
 
 .item7, .item8 {
-    height: 76px;
-    font-size: 50px;
+    height: 7.6vmin;
+    font-size: 5vmin;
     font-weight: normal;
-    padding: 5px
+    padding: .5vmin
 }
 
 .item3 {
@@ -61,11 +61,11 @@ body {
 
 .item9 {
     grid-area: round;
-    height: 256px;
-    width: 340px;
-    font-size: 30px;
+    height: 25.6vmin;
+    width: 34vmin;
+    font-size: 3vmin;
     font-weight: bold;
-    padding-top: 10px;
+    padding-top: 1vmin;
 }
 
 .item10 {
@@ -78,17 +78,17 @@ body {
 }
 
 .hand {
-    height: 160px;
-    width: 212px;
-    font-size: 150px;
+    height: 16vmin;
+    width: 21.2vmin;
+    font-size: 15vmin;
 }
 
 button {
     background-color: #DEDEDE;
-    border: 2px solid #4F4F4F;
+    border: .2vmin solid #4F4F4F;
     cursor: pointer;
-    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
+    box-shadow: 1vmin 1vmin .4vmin rgba(0, 0, 0, 0.25);
+    border-radius: 1vmin;
     text-align: center;
     outline: none;
 }
@@ -100,16 +100,16 @@ button:hover {
 button:active {
 
     background-color: #FFD458;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
-    transform: translateY(4px);
+    box-shadow: .2vmin .2vmin .2vmin rgba(0, 0, 0, 0.25);
+    transform: translateY(.4vmin);
 
 }
 
 .hand span {
     display: inline-block;
     position: relative;
-    right: 15px;
-    bottom: 25px;
+    right: 1.5vmin;
+    bottom: 2.5vmin;
     transform: rotate(-90deg);
 }
 
@@ -118,38 +118,45 @@ button:active {
 }
 
 .score {
-    height: 76px;
-    width: 212px;
+    height: 7.6vmin;
+    width: 21.2vmin;
 }
 
 .gametext {
-    height: 156px;
-    width: 280px;
+    height: 15.6vmin;
+    width: 28vmin;
     background-color: white;
-    font-size: 16px;
+    font-size: 1.6vmin;
     font-weight: normal;
-    margin: 20px auto 5px;
-    padding-top: 5px;
+    margin: 2vmin auto .5vmin;
+    padding-top: .5vmin;
 }
 
 .grid-container {
-    height: 820px;
-    width: 1000px;
-    margin: 20px auto;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 40px;
+    height: 82vmin;
+    width: 90vmin;
+    margin: 2vmin auto;
+    box-shadow: 1vmin 1vmin 1vmin rgba(0, 0, 0, 0.25);
+    border-radius: 4vmin;
     display: grid;
     justify-content: space-between;
     grid-template-areas: 'header header header' 'header2 header2 header2' 'rock paper scissors' 'header3 header3 header3' 'cpu round you' 'cpu_choice round your_choice';
-    grid-row-gap: 20px;
+    grid-row-gap: 2vmin;
     background-color: #C4C4C4;
-    padding: 38px 100px;
+    padding: 3.8vmin 5vmin;
 }
 
 .grid-container > div {
     background-color: #DEDEDE;
-    border: 2px solid #4F4F4F;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
+    border: .2vmin solid #4F4F4F;
+    box-shadow: 0 .4vmin .4vmin rgba(0, 0, 0, 0.25);
+    border-radius: 1vmin;
     text-align: center;
+}
+
+.game_over {
+    padding-top: 2.5vmin;
+    font-size: 3vmin;
+    font-weight: bold;
+    color:red;
 }
